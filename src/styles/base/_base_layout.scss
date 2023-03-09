@@ -1,0 +1,86 @@
+:root {
+  font-family: $bs-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: $bs-text;
+  font-size: $bs-font-16;
+}
+
+.mdc-button .material-icons {
+  font-size: $bs-font-14;
+}
+
+.bs-menu {
+  height: $bs-menu-height;
+  position: relative;
+  z-index: 10;
+  background: $bs-orange;
+}
+
+.bs-content {
+  display: grid;
+  grid-template-columns: 100%;
+  background: $bs-gray-50;
+
+  &__wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+
+    &__non-scrollable {
+      height: calc(100vh - $bs-menu-height);
+    }
+
+    &-with-filter {
+      grid-template-columns: 1fr $bs-filter-bar-width;
+    }
+
+    .bs-main {
+      padding: $bs-main-padding-y 10%;
+      overflow-y: auto;
+
+      &__long {
+        padding: $bs-main-padding-y 2%;
+      }
+
+      &__container {
+        height: 100%;
+        max-width: 1320px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-auto-rows: auto minmax(200px, 1fr);
+      }
+
+      &__header {
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &__content-head {
+        padding: 16px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .bs-search-bar__wrapper {
+          width: 420px;
+
+          .mdc-text-field__icon--leading {
+            color: $bs-helper-text;
+          }
+        }
+      }
+
+      &__content-body {
+        overflow: auto;
+      }
+    }
+
+    .bs-filters {
+      padding: 20px;
+      border-left: 1px solid $bs-gray-200;
+    }
+  }
+}

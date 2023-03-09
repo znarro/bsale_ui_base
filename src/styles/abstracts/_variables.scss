@@ -1,0 +1,52 @@
+/*** Bsale style ***/
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600");
+$bs-font-family: "Open Sans", sans-serif;
+
+/* Colores primarios */
+$bs-orange: #ff7c46;
+$bs-blue: #09c;
+
+/* Escalas de grises */
+$bs-gray-50: #e0e0e0;
+$bs-gray-100: #d9d9d9;
+$bs-gray-200: #cac4d0;
+$bs-gray-300: #a9a6a9;
+$bs-gray-400: #666666;
+$bs-gray-500: #39404a;
+
+/* Colors de texto */
+$bs-text: $bs-gray-500;
+$bs-helper-text: $bs-gray-400;
+
+/* Tamaños de texto (equivalencia en px) */
+$bs-font-10: 0.625rem;
+$bs-font-12: 0.75rem;
+$bs-font-14: 0.875rem;
+$bs-font-15: 0.9375rem;
+$bs-font-16: 1rem;
+$bs-font-17: 1.0625rem;
+$bs-font-18: 1.125rem;
+$bs-font-19: 1.1875rem;
+$bs-font-20: 1.25rem;
+$bs-font-21: 1.3125rem;
+$bs-font-24: 1.5rem;
+$bs-font-28: 1.75rem;
+$bs-font-32: 2rem;
+$bs-font-36: 2.25rem;
+$bs-font-40: 2.5rem;
+$bs-font-48: 3rem;
+$bs-font-60: 3.75rem;
+$bs-font-64: 4rem;
+
+/* Widths */
+$bs-filter-bar-width: 293px;
+
+/* Heights */
+$bs-menu-height: 84px;
+$sidebar-header-height: 65px;
+
+/* Paddings */
+$bs-main-padding-y: 10px;
+$sidebar-padding: 32px;

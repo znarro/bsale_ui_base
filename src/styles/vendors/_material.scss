@@ -1,0 +1,49 @@
+/** 
+IMPORTANTE: 
+- Las reglas @use deben ir primero que los @include
+- Un alias al usar @use, evita conflictos entre módulos con mismo nombre 
+**/
+
+@use "@material/theme" with (
+  $primary: $bs-blue,
+  $on-primary: #fff,
+  $secondary: $bs-blue,
+  $on-secondary: #000000,
+  $error: #b00020,
+  $on-error: #fff,
+  $surface: #fff,
+  $on-surface: #000000,
+  $background: #fff
+);
+
+@use "@material/typography" with (
+  $font-family: unquote("$bs-font-family")
+);
+
+/** 1. IMPORTS DE MDC **/
+
+/* MDC Card */
+@use "@material/card";
+
+/* MDC Button */
+@use "@material/button/styles" as button;
+
+/* MDC TextField */
+// @use "@material/floating-label/mdc-floating-label";
+// @use "@material/line-ripple/mdc-line-ripple";
+// @use "@material/notched-outline/mdc-notched-outline";
+// @use "@material/textfield";
+
+/* MDC Switch */
+// @use "@material/switch/styles" as switch;
+
+/** 2. INCLUDES DE MDC **/
+@include card.core-styles;
+// @include textfield.core-styles;
+
+/** 3. REGLAS CUSTOM **/
+
+/* MDC TextField */
+// .mdc-text-field {
+//   width: 100%;
+// }

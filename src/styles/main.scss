@@ -1,0 +1,11 @@
+/* Adaptación de la Arquitectura 7-1 (https://sass-guidelin.es/#architecture) */
+
+// Abstracts
+@import "./abstracts/_variables";
+
+// Base
+@import "./base/_reset";
+@import "./base/_base_layout";
+
+// Vendors
+@import "./vendors/_material";
