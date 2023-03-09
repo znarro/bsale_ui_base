@@ -10,7 +10,12 @@ const outDir = resolve(__dirname, "dist");
 export default defineConfig({
   plugins: [
     svelte({
-      preprocess: sveltePreprocess(),
+      preprocess: sveltePreprocess({
+        scss: {
+          // Para que los componentes accedan a las variables SASS
+          prependData: `@import 'src/client/styles/abstracts/_variables.scss';`,
+        },
+      }),
       onwarn: (warning, handler) => {
         const { code } = warning;
         // Omite los warning por clases no utilizadas (sucede mucho con Material)
