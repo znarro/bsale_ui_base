@@ -1,9 +1,10 @@
 <script>
   import { onMount } from "svelte";
   import ApiCall from "../../../helpers/api_call";
+  import { Button } from "$lib";
+  import { showFilters } from "./store";
   import ProductList from "./components/ProductList.svelte";
 
-  let number = 0;
   let data = {};
 
   const getProducts = async () => {
@@ -11,7 +12,7 @@
       const response = await ApiCall.request("/api/products");
       return response.data;
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -20,12 +21,23 @@
   });
 </script>
 
-<h1>Products Page</h1>
+<div
+  class="bs-content__wrapper bs-content__wrapper__non-scrollable"
+  class:bs-content__wrapper-with-filter={$showFilters}
+>
+  <main class="bs-main" class:bs-main__long={$showFilters}>
+    <div class="bs-main__container">
+      <section class="bs-main__header">
+        <h1 class="bs-headline-1">Products page</h1>
 
-<a href="/login">Login</a>
-<a href="/products">Products</a>
+        <Button on:click={showFilters.set(!$showFilters)}>Filtros</Button>
+      </section>
 
-<h2>{number}</h2>
-<button on:click={() => number++}>+</button>
+      <ProductList {data} />
+    </div>
+  </main>
 
-<ProductList {data} />
+  {#if $showFilters}
+    <aside class="bs-filters">Componente de filtros</aside>
+  {/if}
+</div>
