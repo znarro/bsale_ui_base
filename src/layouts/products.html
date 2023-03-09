@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Products</title>
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500|Material+Icons&display=swap"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600|Material+Icons|Material+Icons+Outlined&display=swap"
       rel="stylesheet"
     />
+    <script defer type="module" src="../pages/products/main.js"></script>
+    <!-- <script type="module" src="/products.js"></script> -->
   </head>
 
   <body>
-    <div id="app"></div>
-    <script type="module" src="../pages/products/main.js"></script>
-    <!-- <script type="module" src="/products.js"></script> -->
+    <div id="menu" class="bs-menu">
+      <a href="/login">Login</a>
+      <a href="/products">Products</a>
+    </div>
+    <div id="content" class="bs-content"></div>
   </body>
 </html>
