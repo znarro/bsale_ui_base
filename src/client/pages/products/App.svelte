@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import ApiCall from "../../../helpers/api_call";
+  import ApiCall from "$helpers/api_call";
   import { Button } from "$lib";
   import { showFilters } from "./store";
   import ProductList from "./components/ProductList.svelte";

@@ -3,9 +3,10 @@ import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { resolve } from "path";
 import sveltePreprocess from "svelte-preprocess";
 
-const root = resolve(__dirname, "src");
+const root = resolve(__dirname, "src/client");
 const outDir = resolve(__dirname, "dist");
 
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     svelte({
@@ -32,8 +33,9 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      $lib: resolve("src/lib"),
+      $lib: resolve("src/client/lib"),
       $locales: resolve("config/locales"),
+      $helpers: resolve("helpers"),
     },
   },
 });

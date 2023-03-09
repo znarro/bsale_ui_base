@@ -4,9 +4,9 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "dev": "nodemon server/app.js -w server",
+    "dev": "nodemon src/server/app.js -w server",
     "build": "vite build",
-    "start": "NODE_ENV=production node server/app.js"
+    "start": "NODE_ENV=production node src/server/app.js"
   },
   "author": "Stark Team",
   "license": "ISC",
