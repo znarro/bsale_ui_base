@@ -10,9 +10,14 @@
   export let width = ""; // String (opcional)
   export let placeholder = ""; // String (opcional, si no hay label)
   export let variant = "outlined"; // Enum: ["outlined", "filled"]
+  export let leadingIcon = ""; // String: nombre de Material Icons
+  export let trailingIcon = ""; // String: nombre de Material Icons
   export let disabled = false; // Boolean
   export let required = false; // Boolean (opcional)
+  export let minLength = null; // Number (opcional)
   export let maxLength = null; // Number (opcional)
+  export let min = null; // Number (opcional, si type es number)
+  export let max = null; // Number (opcional, si type es number)
   export let helperLineProps = {}; // Object con los props del HelperText component (opcional)
 
   let textFieldElement;
@@ -26,8 +31,10 @@
 
   /** Método que verifica si se ha ingresado un valor inválido */
   const checkInvalidInput = () => {
-    textFieldElement = document.getElementById(`text-field-${id}`);
-    invalidInput = textFieldElement?.classList.contains(
+    console.log('checkInvalidInput');
+    const bla = document.getElementById(`text-field-${id}`);
+    console.log(bla?.classList);
+    invalidInput = bla?.classList.contains(
       "mdc-text-field--invalid"
     );
   };
@@ -48,6 +55,8 @@
     class:mdc-text-field--filled={variant === "filled"}
     class:mdc-text-field--no-label={!label.trim()}
     class:mdc-text-field--disabled={disabled}
+    class:mdc-text-field--with-leading-icon={leadingIcon.trim()}
+    class:mdc-text-field--with-trailing-icon={trailingIcon.trim()}
     bind:this={textFieldElement}
   >
     {#if variant === "outlined"}
@@ -60,10 +69,16 @@
         </span>
         <span class="mdc-notched-outline__trailing" />
       </span>
+      {#if leadingIcon.trim()}
+        <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" tabindex="0" role="button">{leadingIcon}</i>
+      {/if}
     {:else if variant === "filled"}
       <span class="mdc-text-field__ripple" />
       {#if label.trim()}
         <span class="mdc-floating-label" id="label-{id}">{label}</span>
+      {/if}
+      {#if leadingIcon.trim()}
+        <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" tabindex="0" role="button">{leadingIcon}</i>
       {/if}
     {/if}
 
@@ -73,20 +88,27 @@
       {value}
       {placeholder}
       {required}
-      maxlength={maxLength}
       on:input={(e) => handleInput(e.target.value)}
       on:blur={checkInvalidInput}
+      minlength={type !== "number" && minLength}
+      maxlength={type !== "number" && maxLength}
+      min={type === "number" && min}
+      max={type === "number" && max}
       aria-labelledby="label-{id}"
-      aria-controls={helperLineProps?.helperText.trim() && `helper-${id}`}
-      aria-describedby={helperLineProps?.helperText.trim() && `helper-${id}`}
+      aria-controls={helperLineProps?.helperText?.trim() && `helper-${id}`}
+      aria-describedby={helperLineProps?.helperText?.trim() && `helper-${id}`}
     />
 
-    <!-- {#if variant === "filled"}
-      <span class="mdc-line-ripple" />
-    {/if} -->
+    {#if trailingIcon.trim()}
+      <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" tabindex="0" role="button">{trailingIcon}</i>
+    {/if}
   </label>
 
-  {#if helperLineProps?.helperText.trim() || helperLineProps?.errorText.trim() || maxLength > 0}
+  {#if 
+    helperLineProps?.helperText?.trim() || 
+    helperLineProps?.errorText?.trim() || 
+    maxLength > 0
+  }
     <div class="mdc-text-field-helper-line">
       <HelperLine
         type="textField"

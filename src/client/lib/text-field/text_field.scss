@@ -1,7 +1,22 @@
 .text-field-wrapper {
   width: 100%;
 
+  &:has(.mdc-text-field--filled) {
+    height: 43px;
+  }
+
   .mdc-text-field {
     width: 100%;
+
+    &.mdc-text-field--filled {
+      height: auto;
+      width: 420px;
+      background: #e5e9ed;
+      border-radius: 16px;
+
+      &::before {
+        height: 43px;
+      }
+    }
   }
 }

@@ -35,6 +35,7 @@ IMPORTANTE:
 @use "@material/textfield";
 @use "@material/textfield/character-counter";
 @use "@material/textfield/helper-text";
+@use "@material/textfield/icon";
 
 /* MDC Switch */
 // @use "@material/switch/styles" as switch;
@@ -44,6 +45,7 @@ IMPORTANTE:
 @include textfield.core-styles;
 @include helper-text.helper-text-core-styles;
 @include character-counter.character-counter-core-styles;
+@include icon.icon-core-styles;
 
 /** 3. REGLAS CUSTOM **/
 
