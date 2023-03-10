@@ -8,8 +8,11 @@ const viteConfig = {
   rootPath: "",
 };
 
-const getViteHost = () => {
-  const host = "3.101.147.215";
+const getViteHost = async () => {
+  let host = "localhost";
+  const response = await fetch("https://ifconfig.me/all.json");
+  const data = await response.json();
+  if (data) host = data.ip_addr;
   return `http://${host}:${viteConfig.vitePort}`;
 };
 
@@ -18,9 +21,11 @@ const isStaticFilePath = (path) => {
 };
 
 const serveStaticFiles = async (app) => {
-  app.use((req, res, next) => {
+  app.use(async (req, res, next) => {
     if (isStaticFilePath(req.path)) {
-      fetch(`${getViteHost()}${req.path}`).then((response) => {
+      const viteHost = await getViteHost();
+      console.log({ viteHost });
+      fetch(`${viteHost}${req.path}`).then((response) => {
         if (!response.ok) return next();
         res.redirect(response.url);
       });
