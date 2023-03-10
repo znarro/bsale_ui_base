@@ -8,8 +8,7 @@
 <Card padding="20px">
   <div class="bs-main__content-head">
     <div class="bs-search-bar__wrapper">Buscador</div>
-    <Button variant="outlined">
-      <i class="material-icons">add</i>
+    <Button variant="outlined" disabled icon="add">
       {ES.common.add}
     </Button>
   </div>
