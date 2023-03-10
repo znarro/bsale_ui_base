@@ -38,7 +38,7 @@ IMPORTANTE:
 @use "@material/textfield/icon";
 
 /* MDC Switch */
-// @use "@material/switch/styles" as switch;
+@use "@material/switch/styles" as switch;
 
 /** 2. INCLUDES DE MDC **/
 @include card.core-styles;
@@ -46,10 +46,3 @@ IMPORTANTE:
 @include helper-text.helper-text-core-styles;
 @include character-counter.character-counter-core-styles;
 @include icon.icon-core-styles;
-
-/** 3. REGLAS CUSTOM **/
-
-/* MDC TextField */
-// .mdc-text-field {
-//   width: 100%;
-// }

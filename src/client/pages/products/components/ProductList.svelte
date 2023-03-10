@@ -1,5 +1,5 @@
 <script>
-  import { Card, Button, TextField } from "$lib";
+  import { Card, Button, TextField, Switch } from "$lib";
   import ES from "$locales/es.json";
 
   export let data = {};
@@ -48,6 +48,7 @@
           validationMsg: true,
         }}
       />
+      <Switch label="Casado" />
       <Button type="submit" variant="raised">Guardar</Button>
     </form>
     {#each data.list || [] as product}
