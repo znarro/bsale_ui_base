@@ -15,7 +15,7 @@
         trailingIcon="clear"
       />
     </div>
-    <Button variant="outlined" disabled icon="add">
+    <Button variant="outlined" disabled leadingIcon="add">
       {ES.common.add}
     </Button>
   </div>
