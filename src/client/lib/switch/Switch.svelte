@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { MDCSwitch } from "@material/switch";
 
+  // Props
   export let label = "";
   export let checked = "";
 
@@ -12,7 +13,7 @@
     const switchControl = new MDCSwitch(switchElement);
 
     // Se crea un hash que sirva como identificador (lo necesita Material)
-    id = new Date().valueOf().toString().slice(0, 6);
+    id = Date.now() + Math.random();
   });
 
   // TODO: hacer el bind:checked según el valor de aria-checked
