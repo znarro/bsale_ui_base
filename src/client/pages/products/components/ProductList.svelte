@@ -1,8 +1,13 @@
 <script>
-  import { Card, Button, TextField, Switch } from "$lib";
+  import { Card, Button, TextField, Switch, Radio } from "$lib";
   import ES from "$locales/es.json";
 
   export let data = {};
+
+  let formData = {};
+  let gender = "";
+
+  $: console.log("formData", formData);
 </script>
 
 <Card>
@@ -24,19 +29,31 @@
     <p>Time: {data.time}</p>
     <form on:submit|preventDefault={() => console.log("submit!")}>
       <TextField
+        bind:value={formData.name}
+        width="300px"
+        label="Nombre"
+        maxLength={10}
+        helperLineProps={{
+          helperText: "Escribe tu nombre",
+        }}
+      />
+
+      <TextField
+        bind:value={formData.email}
         width="300px"
         label="Email"
         type="email"
         required
         leadingIcon="mail"
-        maxLength={10}
         helperLineProps={{
           helperText: "Escribe tu email",
           errorText: "Debe tener un formato de email válido",
           validationMsg: true,
         }}
       />
+
       <TextField
+        bind:value={formData.age}
         width="300px"
         label="Edad"
         type="number"
@@ -48,9 +65,16 @@
           validationMsg: true,
         }}
       />
-      <Switch label="Casado" />
+
+      <Switch label="Tengo mascota" />
+
+      <p>Genero:</p>
+      <Radio label="Masculino" bind:group={gender} value="M" />
+      <Radio label="Femenino" bind:group={gender} value="F" />
+
       <Button type="submit" variant="raised">Guardar</Button>
     </form>
+
     {#each data.list || [] as product}
       <p>{product.id}: {product.name}</p>
     {/each}
