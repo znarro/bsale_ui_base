@@ -16,6 +16,9 @@ $bs-gray-300: #a9a6a9;
 $bs-gray-400: #666666;
 $bs-gray-500: #39404a;
 
+// Color de fondo
+$bs-background: #f7f7f7;
+
 /* Colors de texto */
 $bs-text: $bs-gray-500;
 $bs-helper-text: $bs-gray-400;
@@ -45,6 +48,7 @@ $bs-filter-bar-width: 293px;
 
 /* Heights */
 $bs-menu-height: 84px;
+$bs-min-content-height: 525px;
 $sidebar-header-height: 65px;
 
 /* Paddings */

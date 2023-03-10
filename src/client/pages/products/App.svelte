@@ -27,15 +27,15 @@
 >
   <main class="bs-main" class:bs-main__long={$showFilters}>
     <div class="bs-main__container">
-      <section class="bs-main__header">
-        <h1 class="bs-headline-1">Products page</h1>
+      <header class="bs-main__header">
+        <h1 class="bs-headline-1">Sliders</h1>
+        <!-- Aquí iría "Filters" -->
+        <button on:click={showFilters.set(!$showFilters)}>Filtros</button>
+      </header>
 
-        <Button variant="text" on:click={showFilters.set(!$showFilters)}
-          >Filtros</Button
-        >
+      <section class="bs-main__content">
+        <ProductList {data} />
       </section>
-
-      <ProductList {data} />
     </div>
   </main>
 

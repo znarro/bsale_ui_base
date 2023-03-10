@@ -17,13 +17,16 @@
     <p>Time: {data.time}</p>
     <form on:submit|preventDefault={() => console.log("submit!")}>
       <TextField
+        width="300px"
         label="Email"
         type="email"
-        helperText="Escribe un email"
-        errorText="Debe tener un formato de email válido"
         required
-        validationMsg
         maxLength={10}
+        helperLineProps={{
+          helperText: "Escribe un email",
+          errorText: "Debe tener un formato de email válido",
+          validationMsg: true,
+        }}
       />
       <Button type="submit" variant="raised">Guardar</Button>
     </form>
