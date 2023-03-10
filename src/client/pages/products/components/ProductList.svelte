@@ -1,6 +1,6 @@
 <script>
   import { Card, Button } from "$lib";
-  import ES from "$locales/ES";
+  import ES from "$locales/es.json";
 
   export let data = {};
 </script>

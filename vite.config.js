@@ -8,6 +8,9 @@ const outDir = resolve(__dirname, "dist");
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    host: true,
+  },
   plugins: [
     svelte({
       preprocess: sveltePreprocess({

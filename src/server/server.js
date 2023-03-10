@@ -8,8 +8,9 @@ const viteConfig = {
   rootPath: "",
 };
 
-const getViteHost = () => {
-  return `http://localhost:${viteConfig.vitePort}`;
+const getViteHost = async () => {
+  const host = "3.101.147.215";
+  return `http://${host}:${viteConfig.vitePort}`;
 };
 
 const isStaticFilePath = (path) => {
