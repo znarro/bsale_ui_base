@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
-  import { MDCRadio } from "@material/radio";
   import { MDCFormField } from "@material/form-field";
+  import { MDCRadio } from "@material/radio";
 
   // Para usar revisar bind:group (https://svelte.dev/tutorial/group-inputs)
 
@@ -10,6 +10,7 @@
   export let value = ""; // String
   export let group = ""; // String
   export let alignEnd = false; // Boolean (opcional)
+  export let noWrap = false; // Boolean (opcional, para label muy largo)
   export let disabled = false; // Boolean (opcional)
 
   let radioElement;
@@ -30,6 +31,7 @@
   bind:this={formFieldElement}
   class="mdc-form-field"
   class:mdc-form-field--align-end={alignEnd}
+  class:mdc-form-field--nowrap={noWrap}
 >
   <div
     bind:this={radioElement}
