@@ -31,7 +31,9 @@
     <span class="mdc-button__ripple" />
 
     {#if leadingIcon.trim()}
-      <i class="material-icons mdc-button__icon" aria-hidden="true">{leadingIcon}</i>
+      <i class="material-symbols-rounded mdc-button__icon" aria-hidden="true"
+        >{leadingIcon}</i
+      >
     {/if}
 
     <span class="mdc-button__touch" />
@@ -40,7 +42,9 @@
     </span>
 
     {#if trailingIcon.trim()}
-      <i class="material-icons mdc-button__icon" aria-hidden="true">{trailingIcon}</i>
+      <i class="material-symbols-rounded mdc-button__icon" aria-hidden="true"
+        >{trailingIcon}</i
+      >
     {/if}
   </button>
 </div>

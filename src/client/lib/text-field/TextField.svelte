@@ -31,12 +31,10 @@
 
   /** Método que verifica si se ha ingresado un valor inválido */
   const checkInvalidInput = () => {
-    console.log('checkInvalidInput');
+    console.log("checkInvalidInput");
     const bla = document.getElementById(`text-field-${id}`);
     console.log(bla?.classList);
-    invalidInput = bla?.classList.contains(
-      "mdc-text-field--invalid"
-    );
+    invalidInput = bla?.classList.contains("mdc-text-field--invalid");
   };
 
   onMount(() => {
@@ -70,7 +68,11 @@
         <span class="mdc-notched-outline__trailing" />
       </span>
       {#if leadingIcon.trim()}
-        <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" tabindex="0" role="button">{leadingIcon}</i>
+        <i
+          class="material-symbols-rounded mdc-text-field__icon mdc-text-field__icon--leading"
+          tabindex="0"
+          role="button">{leadingIcon}</i
+        >
       {/if}
     {:else if variant === "filled"}
       <span class="mdc-text-field__ripple" />
@@ -78,7 +80,11 @@
         <span class="mdc-floating-label" id="label-{id}">{label}</span>
       {/if}
       {#if leadingIcon.trim()}
-        <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" tabindex="0" role="button">{leadingIcon}</i>
+        <i
+          class="material-symbols-rounded mdc-text-field__icon mdc-text-field__icon--leading"
+          tabindex="0"
+          role="button">{leadingIcon}</i
+        >
       {/if}
     {/if}
 
@@ -100,15 +106,15 @@
     />
 
     {#if trailingIcon.trim()}
-      <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" tabindex="0" role="button">{trailingIcon}</i>
+      <i
+        class="material-symbols-rounded mdc-text-field__icon mdc-text-field__icon--trailing"
+        tabindex="0"
+        role="button">{trailingIcon}</i
+      >
     {/if}
   </label>
 
-  {#if 
-    helperLineProps?.helperText?.trim() || 
-    helperLineProps?.errorText?.trim() || 
-    maxLength > 0
-  }
+  {#if helperLineProps?.helperText?.trim() || helperLineProps?.errorText?.trim() || maxLength > 0}
     <div class="mdc-text-field-helper-line">
       <HelperLine
         type="textField"
