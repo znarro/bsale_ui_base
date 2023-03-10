@@ -2,6 +2,11 @@
   import { onMount } from "svelte";
   import { MDCRipple } from "@material/ripple";
 
+  // Props
+  export let type = "button"; // String: "button", "submit", etc
+  export let variant = "raised"; // Options: ["raised", "outlined", "text"]
+  export let disabled = false; // Boolean
+
   let buttonElement;
 
   onMount(() => {
@@ -11,13 +16,16 @@
 
 <div class="mdc-touch-target-wrapper">
   <button
-    class="mdc-button mdc-button--touch mdc-button--raised"
     bind:this={buttonElement}
+    class="mdc-button mdc-button--touch"
+    class:mdc-button--raised={variant === "raised"}
+    class:mdc-button--outlined={variant === "outlined"}
+    {type}
     on:click
   >
     <span class="mdc-button__ripple" />
     <span class="mdc-button__touch" />
-    <span class="mdc-button__label align">
+    <span class="mdc-button__label center-content">
       <slot />
     </span>
   </button>
