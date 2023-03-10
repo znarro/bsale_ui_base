@@ -8,7 +8,7 @@ const viteConfig = {
   rootPath: "",
 };
 
-const getViteHost = async () => {
+const getViteHost = () => {
   const host = "3.101.147.215";
   return `http://${host}:${viteConfig.vitePort}`;
 };
