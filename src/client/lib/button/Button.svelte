@@ -4,7 +4,7 @@
 
   // Props
   export let type = "button"; // String: "button", "submit", etc
-  export let variant = "raised"; // Options: ["raised", "outlined", "text"]
+  export let variant = "raised"; // Enum: ["raised", "outlined", "text"]
   export let disabled = false; // Boolean
   export let icon = ''; // String: nombre de Material Icons
 
