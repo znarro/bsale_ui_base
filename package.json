@@ -23,6 +23,7 @@
   "dependencies": {
     "@material/button": "^14.0.0",
     "@material/card": "^14.0.0",
+    "@material/checkbox": "^14.0.0",
     "@material/form-field": "^14.0.0",
     "@material/radio": "^14.0.0",
     "@material/switch": "^14.0.0",

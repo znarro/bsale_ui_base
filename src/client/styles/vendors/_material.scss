@@ -1,14 +1,14 @@
 /** 
 IMPORTANTE: 
 - Las reglas @use deben ir primero que los @include
-- Un alias al usar @use, evita conflictos entre módulos con mismo nombre 
+- Un alias (as) al usar @use, evita conflictos entre módulos con mismo nombre 
 **/
 
 @use "@material/theme" with (
   $primary: $bs-blue,
   $on-primary: #fff,
   $secondary: $bs-blue,
-  $on-secondary: #000000,
+  $on-secondary: $bs-background,
   $error: #b00020,
   $on-error: #fff,
   $surface: #fff,
@@ -40,9 +40,14 @@ IMPORTANTE:
 /* MDC Switch */
 @use "@material/switch/styles" as switch;
 
-/* MDC Radio */
-@use "@material/radio/styles";
+/* MDC FormField */
 @use "@material/form-field";
+
+/* MDC Radio */
+@use "@material/radio/styles" as radio;
+
+/* MDC Checkbox */
+@use "@material/checkbox";
 
 /** 2. INCLUDES DE MDC **/
 @include card.core-styles;
@@ -51,3 +56,4 @@ IMPORTANTE:
 @include character-counter.character-counter-core-styles;
 @include icon.icon-core-styles;
 @include form-field.core-styles;
+@include checkbox.core-styles;

@@ -1,5 +1,5 @@
 <script>
-  import { Card, Button, TextField, Switch, Radio } from "$lib";
+  import { Card, Button, TextField, Switch, Radio, Checkbox } from "$lib";
   import ES from "$locales/es.json";
 
   export let data = {};
@@ -69,8 +69,10 @@
       <Switch label="Tengo mascota" />
 
       <p>Genero:</p>
-      <Radio label="Masculino" bind:group={gender} value="M" />
-      <Radio label="Femenino" bind:group={gender} value="F" />
+      <Radio bind:group={gender} label="Masculino" value="M" />
+      <Radio bind:group={gender} label="Femenino" value="F" />
+
+      <Checkbox bind:checked={formData.agreeOnTerms} label="Acepto términos" />
 
       <Button type="submit" variant="raised">Guardar</Button>
     </form>
