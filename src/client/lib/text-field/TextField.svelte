@@ -43,7 +43,7 @@
     const textField = new MDCTextField(textFieldElement);
 
     // Se crea un hash que sirva como identificador (lo necesita Material)
-    id = new Date().valueOf().toString().slice(0, 6);
+    id = Date.now() + Math.random();
   });
 </script>
 
