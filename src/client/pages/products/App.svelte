@@ -30,7 +30,9 @@
       <section class="bs-main__header">
         <h1 class="bs-headline-1">Products page</h1>
 
-        <Button on:click={showFilters.set(!$showFilters)}>Filtros</Button>
+        <Button variant="text" on:click={showFilters.set(!$showFilters)}
+          >Filtros</Button
+        >
       </section>
 
       <ProductList {data} />

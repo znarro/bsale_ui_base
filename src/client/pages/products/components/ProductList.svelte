@@ -1,5 +1,5 @@
 <script>
-  import { Card, Button } from "$lib";
+  import { Card, Button, TextField } from "$lib";
   import ES from "$locales/es.json";
 
   export let data = {};
@@ -15,6 +15,18 @@
 
   <div class="bs-main__content-body">
     <p>Time: {data.time}</p>
+    <form on:submit|preventDefault={() => console.log("submit!")}>
+      <TextField
+        label="Email"
+        type="email"
+        helperText="Escribe un email"
+        errorText="Debe tener un formato de email válido"
+        required
+        validationMsg
+        maxLength={10}
+      />
+      <Button type="submit" variant="raised">Guardar</Button>
+    </form>
     {#each data.list || [] as product}
       <p>{product.id}: {product.name}</p>
     {/each}

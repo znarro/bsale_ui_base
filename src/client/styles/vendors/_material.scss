@@ -29,17 +29,21 @@ IMPORTANTE:
 @use "@material/button/styles" as button;
 
 /* MDC TextField */
-// @use "@material/floating-label/mdc-floating-label";
-// @use "@material/line-ripple/mdc-line-ripple";
-// @use "@material/notched-outline/mdc-notched-outline";
-// @use "@material/textfield";
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/line-ripple/mdc-line-ripple";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/textfield";
+@use "@material/textfield/character-counter";
+@use "@material/textfield/helper-text";
 
 /* MDC Switch */
 // @use "@material/switch/styles" as switch;
 
 /** 2. INCLUDES DE MDC **/
 @include card.core-styles;
-// @include textfield.core-styles;
+@include textfield.core-styles;
+@include helper-text.helper-text-core-styles;
+@include character-counter.character-counter-core-styles;
 
 /** 3. REGLAS CUSTOM **/
 
