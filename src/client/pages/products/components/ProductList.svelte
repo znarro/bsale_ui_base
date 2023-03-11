@@ -1,11 +1,20 @@
 <script>
-  import { Card, Button, TextField, Switch, Radio, Checkbox } from "$lib";
+  import {
+    Card,
+    Button,
+    TextField,
+    Switch,
+    Radio,
+    Checkbox,
+    Sidebar,
+  } from "$lib";
   import ES from "$locales/es.json";
 
   export let data = {};
 
   let formData = {};
   let gender = "";
+  let isSidebarOpen;
 
   $: console.log("formData", formData);
 </script>
@@ -20,7 +29,7 @@
         trailingIcon="clear"
       />
     </div>
-    <Button variant="outlined" disabled leadingIcon="add">
+    <Button leadingIcon="add" on:click={() => (isSidebarOpen = true)}>
       {ES.common.add}
     </Button>
   </div>
@@ -82,3 +91,12 @@
     {/each}
   </div>
 </Card>
+
+<Sidebar
+  bind:isOpen={isSidebarOpen}
+  title="Sidebar"
+  onSubmit={() => console.log(formData)}
+  contentPadding="0"
+>
+  <div>Hi</div>
+</Sidebar>
