@@ -1,6 +1,6 @@
 import express, { json, urlencoded } from "express";
-import indexRouter from "./routes/index.js";
-import gatewayRouter from "./routes/gateway.js";
+import webRouter from "./routes/web/index.js";
+import apiRouter from "./routes/api/index.js";
 import logger from "morgan";
 import { join, dirname, resolve } from "path";
 import { fileURLToPath } from "url";
@@ -27,9 +27,9 @@ app.use(express.static(join(__dirname, "public")));
 app.use(express.static("dist"));
 
 // Rutas que cargan las páginas
-app.use("/", server.handleRedirect, indexRouter);
+app.use("/", server.handleRedirect, webRouter);
 // Rutas que sirven como gateway
-app.use("/api", gatewayRouter);
+app.use("/api", apiRouter);
 
 global.environment = environment;
 
