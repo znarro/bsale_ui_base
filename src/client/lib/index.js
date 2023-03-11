@@ -5,3 +5,4 @@ export { default as Switch } from "./switch/Switch.svelte";
 export { default as Radio } from "./radio/Radio.svelte";
 export { default as Checkbox } from "./checkbox/Checkbox.svelte";
 export { default as HelperLine } from "./helper-line/HelperLine.svelte";
+export { default as Sidebar } from "./sidebar/Sidebar.svelte";

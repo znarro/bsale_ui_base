@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Products</title>
+
     <link
       rel="icon"
       type="image/svg+xml"
       href="/logo_bsale_web_naranjo_256x256.svg"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0&display=swap"
+      rel="stylesheet"
+    />
+
     <script defer type="module" src="../pages/login/main.js"></script>
-    <!-- <script defer type="module" src="/login.js"></script> -->
   </head>
 
   <body>
-    <div id="menu" class="bs-menu"></div>
+    <div id="menu" class="bs-menu">
+      <div style="display: flex; align-items: center; gap: 50px">
+        <img
+          src="../assets/logo_bsale_web_naranjo_500x200.svg"
+          alt="logo Bsale"
+          width="200"
+        />
+        <a href="/login">Login</a>
+        <a href="/products">Products</a>
+      </div>
+    </div>
     <div id="content" class="bs-content"></div>
   </body>
 </html>

@@ -37,7 +37,7 @@
     {/if}
 
     <span class="mdc-button__touch" />
-    <span class="mdc-button__label center-content">
+    <span class="mdc-button__label">
       <slot />
     </span>
 

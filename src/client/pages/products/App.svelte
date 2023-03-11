@@ -30,7 +30,9 @@
       <header class="bs-main__header">
         <h1 class="bs-headline-1">Sliders</h1>
         <!-- Aquí iría "Filters" -->
-        <button on:click={showFilters.set(!$showFilters)}>Filtros</button>
+        <Button variant="text" on:click={showFilters.set(!$showFilters)}
+          >Filtros</Button
+        >
       </header>
 
       <section class="bs-main__content">

@@ -1,5 +1,9 @@
-.center-content {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.mdc-button {
+  margin: 0;
+
+  .mdc-button__label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
 }
