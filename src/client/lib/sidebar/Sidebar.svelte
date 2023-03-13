@@ -68,6 +68,7 @@
 
         <div class="second-row" class:no-menu={!menuOptions.length > 0}>
           <div class="center-column">
+            <!-- TABS SLOT: el componente deberá tener el atributo slot="tabs" -->
             <slot name="tabs" />
           </div>
         </div>
