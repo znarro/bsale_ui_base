@@ -40,10 +40,15 @@
       }
 
       .second-row {
-        height: $bs-sidebar-header-height;
+        display: none;
+
+        &:has(.mdc-tab-bar) {
+          display: block;
+          height: $bs-sidebar-header-height;
+        }
       }
 
-      .left-column {
+      .left-column, .right-column {
         padding: 16px 12px;
         display: flex;
         gap: 12px;

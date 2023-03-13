@@ -98,5 +98,5 @@
   onSubmit={() => console.log(formData)}
   contentPadding="0"
 >
-  <div>Hi</div>
+  <div slot="tabs" class="mdc-tab-bar">TabBar, si hay</div>
 </Sidebar>
