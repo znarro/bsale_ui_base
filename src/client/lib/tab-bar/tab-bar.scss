@@ -1,0 +1,52 @@
+.mdc-tab-bar {
+  width: fit-content;
+  height: $bs-tab-bar-height;
+
+  .mdc-tab-scroller {
+    height: inherit;
+
+    .mdc-tab-scroller__scroll-area {
+      height: inherit;
+    }
+
+    .mdc-tab-scroller__scroll-content {
+      gap: 32px;
+    }
+  }
+
+  .mdc-tab {
+    height: 100%;
+    min-width: 0;
+    padding: 0;
+
+    .mdc-tab__text-label {
+      text-transform: initial;
+      color: $bs-button-text;
+    }
+
+    &:hover {
+      .mdc-tab__text-label {
+        color: $bs-gray-500;
+      }
+
+      .mdc-tab-indicator__content--underline {
+        opacity: 1;
+        border-color: $bs-gray-500;
+      }
+    }
+
+    &.mdc-tab--active {
+      .mdc-tab__text-label {
+        color: $bs-blue;
+      }
+
+      &:hover {
+        color: $bs-blue;
+
+        .mdc-tab-indicator__content--underline {
+          border-color: $bs-blue;
+        }
+      }
+    }
+  }
+}

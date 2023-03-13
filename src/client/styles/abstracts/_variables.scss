@@ -21,6 +21,7 @@ $bs-background: #f7f7f7;
 /* Colors de texto */
 $bs-text: $bs-gray-500;
 $bs-helper-text: $bs-gray-400;
+$bs-button-text: #808080;
 
 /* Tamaños de texto (equivalencia en px) */
 $bs-font-10: 0.625rem;
@@ -50,7 +51,8 @@ $bs-contextual-menu-width: 48px;
 $bs-menu-height: 84px;
 $bs-min-content-height: 525px;
 $bs-sidebar-header-height: 56px;
-$bs-sidebar-header-big-height: 112px;
+$bs-tab-bar-height: 42px;
+$bs-sidebar-header-big-height: $bs-sidebar-header-height + $bs-tab-bar-height;
 
 /* Paddings */
 $bs-main-padding-y: 10px;

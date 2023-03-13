@@ -49,6 +49,12 @@ IMPORTANTE:
 /* MDC Checkbox */
 @use "@material/checkbox";
 
+/* MDC TabBar */
+@use "@material/tab-bar/mdc-tab-bar";
+@use "@material/tab-scroller/mdc-tab-scroller";
+@use "@material/tab-indicator/mdc-tab-indicator";
+@use "@material/tab/mdc-tab";
+
 /** 2. INCLUDES DE MDC **/
 @include card.core-styles;
 @include textfield.core-styles;

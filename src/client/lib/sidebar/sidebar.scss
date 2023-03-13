@@ -56,12 +56,8 @@
     .sidebar-form__header {
       border-bottom: 1px solid $bs-gray-100;
 
-      .first-row,
-      .second-row {
-        height: $bs-sidebar-header-height;
-      }
-
       .first-row {
+        height: $bs-sidebar-header-height;
         .inverted {
           transform: rotate(90deg);
         }
@@ -69,7 +65,7 @@
 
       .second-row {
         &:has(.mdc-tab-bar) {
-          height: $bs-sidebar-header-height;
+          height: $bs-tab-bar-height;
         }
       }
 

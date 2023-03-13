@@ -7,6 +7,7 @@
     Radio,
     Checkbox,
     Sidebar,
+    TabBar,
   } from "$lib";
   import ES from "$locales/es.json";
 
@@ -98,5 +99,8 @@
   onSubmit={() => console.log(formData)}
   contentPadding="0"
 >
-  <div slot="tabs" class="mdc-tab-bar">TabBar, si hay</div>
+  <TabBar slot="tabs" tabs={[
+    { title: "Uno" },
+    { title: "Dos" }
+  ]} />
 </Sidebar>
