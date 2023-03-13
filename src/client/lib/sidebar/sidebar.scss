@@ -32,38 +32,62 @@
     .sidebar-form__header {
       border-bottom: 1px solid $bs-gray-100;
 
-      .first-row {
+      .first-row,
+      .second-row {
         height: $bs-sidebar-header-height;
         display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: auto 1fr auto;
+        grid-auto-columns: 84px 1fr 48px;
+      }
+
+      .first-row {
+        grid-template-areas: "left center right";
+
+        .inverted {
+          transform: rotate(90deg);
+        }
       }
 
       .second-row {
-        display: none;
+        grid-template-areas: ". center .";
 
         &:has(.mdc-tab-bar) {
-          display: block;
           height: $bs-sidebar-header-height;
         }
       }
 
-      .left-column, .right-column {
+      .left-column,
+      .right-column {
         padding: 16px 12px;
         display: flex;
         gap: 12px;
       }
 
+      .left-column {
+        grid-area: left;
+      }
+
       .central-column {
-        padding: 8px;
+        grid-area: center;
+        padding: 8px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
+      }
+
+      .right-column {
+        grid-area: right;
       }
     }
 
     .sidebar-form__content {
       overflow-y: auto;
+      display: grid;
+      grid-auto-columns: 84px 1fr 48px;
+      grid-template-areas: ". center .";
+
+      .central-column {
+        grid-area: center;
+      }
     }
   }
 }

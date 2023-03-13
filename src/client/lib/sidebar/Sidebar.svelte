@@ -40,11 +40,11 @@
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <i class="material-symbols-rounded" on:click={handleClose}> close </i>
             {#if fullScreen}
-              <i class="material-symbols-rounded" on:click={() => (fullScreen = false)}>
+              <i class="material-symbols-rounded inverted" on:click={() => (fullScreen = false)}>
                 close_fullscreen
               </i>
             {:else}
-              <i class="material-symbols-rounded" on:click={() => (fullScreen = true)}>
+              <i class="material-symbols-rounded inverted" on:click={() => (fullScreen = true)}>
                 open_in_full
               </i>
             {/if}
@@ -67,18 +67,20 @@
         </div>
 
         <div class="second-row">
-          <slot name="tabs" />
+          <div class="central-column">
+            <slot name="tabs" />
+          </div>
         </div>
       </header>
 
 
       <div class="sidebar-form__content">
-        <div></div>
-        <!-- CONTENT SLOT: el componente deberá tener el atributo slot="content" -->
-        <slot name="content">
-          <span>Sin contenido</span>
-        </slot>
-        <div></div>
+        <div class="central-column">
+          <!-- CONTENT SLOT: el componente deberá tener el atributo slot="content" -->
+          <slot name="content">
+            <span>Sin contenido</span>
+          </slot>
+        </div>
       </div>
     </form>
   </div>
