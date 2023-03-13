@@ -39,7 +39,10 @@
               {/if}
               <span class="mdc-tab__text-label bs-headline-2">{tabData.title}</span>
             </span>
-            <span class="mdc-tab-indicator">
+            <span 
+              class="mdc-tab-indicator" 
+              class:mdc-tab-indicator--active={tabData.active}
+            >
               <span
                 class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
               />
