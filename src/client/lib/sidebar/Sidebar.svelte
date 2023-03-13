@@ -11,7 +11,7 @@
   export let title = ""; // String
   export let action = "Guardar"; // String
   export let noAction = false; // Boolean (opcional, si no quieres botón)
-  export let menuOptions = [1, 2]; // Array (opcional, si requiere menú contextual): [{ text: [String], icon: [String], method: [Function] }...]
+  export let menuOptions = []; // Array (opcional, si requiere menú contextual): [{ text: [String], icon: [String], method: [Function] }...]
   export let loading = false; // Boolean (opcional)
   export let preventClosingMethod; // Method (opcional, detiene el cierre del sidebar ante una validación)
 
@@ -35,7 +35,7 @@
       on:submit|preventDefault={onSubmit}
     >
       <header class="sidebar-form__header">
-        <div class="first-row">
+        <div class="first-row" class:no-menu={!menuOptions.length > 0}>
           <div class="left-column">
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <i class="material-symbols-rounded" on:click={handleClose}> close </i>
@@ -66,16 +66,16 @@
           {/if}
         </div>
 
-        <div class="second-row">
-          <div class="central-column">
+        <div class="second-row" class:no-menu={!menuOptions.length > 0}>
+          <div class="center-column">
             <slot name="tabs" />
           </div>
         </div>
       </header>
 
 
-      <div class="sidebar-form__content">
-        <div class="central-column">
+      <div class="sidebar-form__content" class:no-menu={!menuOptions.length > 0}>
+        <div class="center-column">
           <!-- CONTENT SLOT: el componente deberá tener el atributo slot="content" -->
           <slot name="content">
             <span>Sin contenido</span>
