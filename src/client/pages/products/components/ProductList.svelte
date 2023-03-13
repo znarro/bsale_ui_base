@@ -1,23 +1,14 @@
 <script>
-  import {
-    Card,
-    Button,
-    TextField,
-    Switch,
-    Radio,
-    Checkbox,
-    Sidebar,
-    TabBar,
-  } from "$lib";
+  import { Card, Button, TextField, Sidebar, TabBar } from "$lib";
+  import FormExample from "./FormExample.svelte";
   import ES from "$locales/es.json";
 
   export let data = {};
 
-  let formData = {};
-  let gender = "";
   let isSidebarOpen;
+  let selectedTabIndex = 0;
 
-  $: console.log("formData", formData);
+  $: console.log({ selectedTabIndex });
 </script>
 
 <Card>
@@ -37,55 +28,6 @@
 
   <div class="bs-main__content-body">
     <p>Time: {data.time}</p>
-    <form on:submit|preventDefault={() => console.log("submit!")}>
-      <TextField
-        bind:value={formData.name}
-        width="300px"
-        label="Nombre"
-        maxLength={10}
-        helperLineProps={{
-          helperText: "Escribe tu nombre",
-        }}
-      />
-
-      <TextField
-        bind:value={formData.email}
-        width="300px"
-        label="Email"
-        type="email"
-        required
-        leadingIcon="mail"
-        helperLineProps={{
-          helperText: "Escribe tu email",
-          errorText: "Debe tener un formato de email válido",
-          validationMsg: true,
-        }}
-      />
-
-      <TextField
-        bind:value={formData.age}
-        width="300px"
-        label="Edad"
-        type="number"
-        min="18"
-        required
-        helperLineProps={{
-          helperText: "Escribe tu edad",
-          errorText: "Debe ser mayor de 18",
-          validationMsg: true,
-        }}
-      />
-
-      <Switch label="Tengo mascota" />
-
-      <p>Genero:</p>
-      <Radio bind:group={gender} label="Masculino" value="M" />
-      <Radio bind:group={gender} label="Femenino" value="F" />
-
-      <Checkbox bind:checked={formData.agreeOnTerms} label="Acepto términos" />
-
-      <Button type="submit" variant="raised">Guardar</Button>
-    </form>
 
     {#each data.list || [] as product}
       <p>{product.id}: {product.name}</p>
@@ -96,11 +38,19 @@
 <Sidebar
   bind:isOpen={isSidebarOpen}
   title="Sidebar"
-  onSubmit={() => console.log(formData)}
+  onSubmit={() => console.log("Submit")}
   contentPadding="0"
 >
-  <TabBar slot="tabs" tabs={[
-    { title: "Uno" },
-    { title: "Dos" }
-  ]} />
+  <TabBar
+    slot="tabs"
+    tabs={[{ title: "Form", active: true }, { title: "Nada" }]}
+    on:tab-click={(e) => (selectedTabIndex = e.detail.index)}
+  />
+  <div slot="content">
+    {#if selectedTabIndex === 0}
+      <FormExample />
+    {:else if selectedTabIndex === 1}
+      <p>Nada</p>
+    {/if}
+  </div>
 </Sidebar>
