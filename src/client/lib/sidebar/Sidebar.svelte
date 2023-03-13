@@ -50,7 +50,7 @@
             {/if}
           </div>
 
-          <div class="central-column">
+          <div class="center-column">
             <h1 class="bs-headline-1">{title}</h1>
             {#if !noAction}
               <Button id={title} type="submit">{action}</Button>

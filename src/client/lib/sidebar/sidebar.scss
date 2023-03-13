@@ -61,6 +61,13 @@
         .inverted {
           transform: rotate(90deg);
         }
+
+        .center-column {
+          padding: 8px 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
       }
 
       .second-row {
@@ -75,17 +82,14 @@
         display: flex;
         gap: 12px;
       }
-
-      .central-column {
-        padding: 8px 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
     }
 
     .sidebar-form__content {
       overflow-y: auto;
+
+      .center-column {
+        margin-top: 24px;
+      }
     }
   }
 }
